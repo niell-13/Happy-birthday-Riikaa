@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dear Rika ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+overflow:hidden;
+height:100vh;
+}
+
+audio{
+display:none;
+}
+
+.slider{
+width:500%;
+height:100vh;
+display:flex;
+transition:1s ease;
+}
+
+.page{
+width:100vw;
+height:100vh;
+flex-shrink:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:20px;
+position:relative;
+}
+
+.card{
+width:100%;
+max-width:430px;
+
+background:white;
+
+padding:20px;
+
+border-radius:25px;
+
+box-shadow:
+0 10px 35px rgba(0,0,0,.15);
+
+text-align:center;
+}
+
+.cover-img{
+width:230px;
+height:300px;
+object-fit:cover;
+
+border-radius:20px;
+
+box-shadow:
+0 5px 20px rgba(0,0,0,.2);
+}
+
+.photo{
+width:100%;
+border-radius:15px;
+}
+
+.polaroid{
+background:white;
+padding:10px;
+border-radius:10px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.15);
+
+margin-bottom:15px;
+
+transform:rotate(-2deg);
+}
+
+.title{
+font-family:'Caveat',cursive;
+font-size:48px;
+color:#ff4f81;
+margin-top:15px;
+}
+
+.subtitle{
+margin-top:10px;
+font-size:18px;
+}
+
+.page-title{
+color:#ff4f81;
+margin-bottom:15px;
+}
+
+.note{
+background:#fff7fa;
+
+padding:18px;
+
+border-radius:15px;
+
+line-height:1.8;
+
+margin-top:10px;
+text-align:left;
+}
+
+.btn{
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+background:#ff4f81;
+
+color:white;
+
+cursor:pointer;
+
+margin-top:15px;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+}
+
+textarea{
+width:100%;
+height:120px;
+padding:15px;
+border-radius:15px;
+border:1px solid #ddd;
+resize:none;
+}
+
+.heart{
+position:fixed;
+pointer-events:none;
+animation:fall 7s linear forwards;
+z-index:999;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-100px);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+
+}
+
+.typing{
+border-right:3px solid #ff4f81;
+white-space:pre-line;
+overflow:hidden;
+}
+
+.footer{
+margin-top:15px;
+font-size:13px;
+opacity:.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="slider" id="slider">
+
+<!-- COVER -->
+
+<div class="page">
+
+<div class="card">
+
+<img src="unnamed.jpg" class="cover-img">
+
+<div class="title">
+Dear Rika 💌
+</div>
+
+<div class="subtitle">
+Happy Birthday 🎂<br>
+18 Years Old ✨<br><br>
+07 June 2026
+</div>
+
+<div
+id="coverTyping"
+class="note typing"
+style="margin-top:20px;">
+</div>
+
+<button
+class="btn"
+onclick="openBook()">
+Open My Scrapbook ❤️
+</button>
+
+<div class="footer">
+Made with ❤️
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 1 -->
+
+<div class="page">
+
+<div class="card">
+
+<div class="polaroid">
+<img src="photo1.jpg" class="photo">
+</div>
+
+<h2 class="page-title">
+🌷 A Little Birthday Note 🎂
+</h2>
+
+<div id="text1" class="note typing"></div>
+
+<div class="nav">
+<div></div>
+
+<button
+class="btn"
+onclick="goTo(2)">
+Next →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page">
+
+<div class="card">
+
+<div class="polaroid">
+<img src="photo2.jpg" class="photo">
+</div>
+
+<h2 class="page-title">
+💕 The Days I Miss ✨
+</h2>
+
+<div id="text2" class="note typing"></div>
+
+<div class="nav">
+
+<button
+class="btn"
+onclick="goTo(1)">
+← Prev
+</button>
+
+<button
+class="btn"
+onclick="goTo(3)">
+Next →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page">
+
+<div class="card">
+
+<div class="polaroid">
+<img src="photo3.jpg" class="photo">
+</div>
+
+<h2 class="page-title">
+💌 Things I Never Said 🌙
+</h2>
+
+<div id="text3" class="note typing"></div>
+
+<div class="nav">
+
+<button
+class="btn"
+onclick="goTo(2)">
+← Prev
+</button>
+
+<button
+class="btn"
+onclick="goTo(4)">
+Next →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- LAST PAGE -->
+
+<div class="page">
+
+<div class="card">
+
+<h2 class="page-title">
+🌙 Before I Close This Book ❤️
+</h2>
+
+<div id="text4" class="note typing"></div>
+
+<h3 style="margin-top:20px;">
+💌 Balas Pesanku
+</h3>
+
+<textarea
+id="pesan"
+placeholder="Tulis sesuatu untukku...">
+</textarea>
+
+<button
+class="btn"
+onclick="kirimWA()">
+Kirim ke WhatsApp ❤️
+</button>
+
+<div class="nav">
+
+<button
+class="btn"
+onclick="goTo(3)">
+← Prev
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const nomorWA="628xxxxxxxxxxx";
+
+const slider=
+document.getElementById("slider");
+
+function goTo(page){
+
+slider.style.transform=
+`translateX(-${page*100}vw)`;
+
+}
+
+function openBook(){
+
+document.getElementById("music").play();
+
+goTo(1);
+
+}
+
+function typeText(id,text,speed){
+
+let el=
+document.getElementById(id);
+
+let i=0;
+
+function type(){
+
+if(i<text.length){
+
+el.innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(type,speed);
+
+}
+
+}
+
+type();
+
+}
+
+typeText(
+"coverTyping",
+`Open when you're ready...
+Aku punya sesuatu untukmu 💌`,
+40
+);
+
+typeText(
+"text1",
+`Happy birthday Kamu🥳🎂🥳
+
+utututuu udah gede anak orang,
+18 tahun nih yeee🤗
+
+Panjang umur, sehat selalu ya.
+Semoga semua yang kamu usahain satu per satu bisa tercapai.
+
+Maaf ya kalau hadiah yang aku kasih sederhana.
+
+Tapi aku harap sedikit banyak bisa bikin hari spesial kamu jadi lebih berkesan.
+
+Karena hari ini adalah hari seseorang yang pernah jadi alasan aku tersenyum tanpa alasan. 🌷`,
+20
+);
+
+typeText(
+"text2",
+`Seneng deh bisa ketemu kamu lagi,
+bareng kamu lagi,
+deket sama kamu lagi,
+meski agak renggang sih mwehehe.
+
+Jujur aja, ada beberapa hal yang bikin aku sadar kalau kebersamaan itu nggak selalu soal seberapa lama.
+
+Dan entah kenapa,
+aku masih seneng setiap kali semesta ngasih kesempatan buat ketemu kamu lagi. 💕`,
+20
+);
+
+typeText(
+"text3",
+`Beberapa minggu ini aku sadar,
+kalau kita emang nggak bakal bisa bareng lagi dari awal.
+
+Nyatanya cuma aku sendiri yang bertahan dari awal.
+
+Tapi nggak apa-apa kok.
+
+Kalau memang bukan aku yang ada di akhir cerita itu,
+setidaknya aku pernah bahagia jadi bagian dari beberapa halamannya.
+
+🎈🎂🎈 HBD 🎈🎂🎈`,
+20
+);
+
+typeText(
+"text4",
+`Mungkin aku bukan orang yang kamu harap buat hadir di hidup kamu.
+
+Tapi aku bisa ngetreat kamu layaknya orang yang aku harap di hidup aku.
+
+Terima kasih ya.
+
+Untuk semua obrolan,
+semua kenangan,
+semua tawa,
+dan semua cerita yang pernah kita lewati.
+
+Kalau suatu hari nanti kita benar-benar berjalan ke arah yang berbeda,
+aku harap kamu tetap menemukan banyak alasan untuk bahagia.
+
+Dan aku juga berharap,
+setiap tanggal 07 Juni,
+akan selalu jadi hari yang indah buat kamu.
+
+Happy Birthday, Rika. ❤️
+
+- Dari seseorang yang pernah menaruh banyak harapan pada namamu.`,
+20
+);
+
+function kirimWA(){
+
+let pesan=
+document.getElementById("pesan").value;
+
+if(pesan.trim()==""){
+alert("Isi pesannya dulu ya ❤️");
+return;
+}
+
+window.open(
+"https://wa.me/"+nomorWA+
+"?text="+encodeURIComponent(
+"Hai ❤️\n\nAku udah baca scrapbooknya.\n\n"+pesan
+),
+"_blank"
+);
+
+}
+
+function createHeart(){
+
+let heart=
+document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=
+Math.random()*100+"vw";
+
+heart.style.fontSize=
+(Math.random()*25+15)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+
+}
+
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+  </html>
